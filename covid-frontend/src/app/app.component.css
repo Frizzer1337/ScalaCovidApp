@@ -31,33 +31,29 @@ time, mark, audio, video {
   text-align: center;
 }
 
-.main-section{
+.main-section {
   display: flex;
   flex-direction: row;
 }
 
-.buttons-section{
+.buttons-section {
   width: 30%;
 }
 
-.chart-section{
+app-graph {
   margin-left: auto;
   margin-right: auto;
   width: 65%;
 }
 
 
-#searchbar{
-  padding:20px;
+#searchbar {
+  padding: 20px;
   border-radius: 10px;
   width: 80%;
   margin-bottom: 5px;
   margin-left: auto;
   margin-right: auto;
-}
-
-.datepicker{
-  margin-bottom: 30px;
 }
 
 .full-width-button {
