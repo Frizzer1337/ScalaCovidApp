@@ -34,7 +34,7 @@ object EndDate extends QueryParamDecoderMatcher[String]("to")
 val httpClient = JavaNetClientBuilder[IO].create
 
 val singleCountryService: HttpRoutes[IO] = HttpRoutes.of[IO] {
-  case request@GET -> Root / "by-country" / name :? StartDate(startDate) +& EndDate(endDate) => {
+  case request@GET -> Root / "countries" / name :? StartDate(startDate) +& EndDate(endDate) => {
     val uri = basicUrl / "country" / name +? ("from", startDate) +? ("to", endDate)
     (for {
       data <- httpClient.expect[List[CovidData]](Request[IO](uri = uri))

@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {CountryData} from "../countryData";
+import {environment} from "../../enviroment/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,6 @@ export class GraphService {
   }
 
   getCountry(startDate: string, endDate: string, countryName: string) {
-    return this.client.get<CountryData[]>(`http://localhost:7000/api/by-country/${countryName}?from=${startDate}&to=${endDate}`)
+    return this.client.get<CountryData[]>(`${environment.apiUrl}/countries/${countryName}?from=${startDate}&to=${endDate}`)
   }
 }

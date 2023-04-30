@@ -1,6 +1,7 @@
 import {Injectable} from "@angular/core";
 import {Country} from "../entity/country";
 import {HttpClient} from "@angular/common/http";
+import {environment} from "../enviroment/environment";
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +12,7 @@ export class AppService {
   }
 
   getAllCountries() {
-    return this.client.get<Country[]>('http://localhost:7000/api/countries')
+    return this.client.get<Country[]>(`${environment.apiUrl}/countries`)
   }
 
 }

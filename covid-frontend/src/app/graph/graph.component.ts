@@ -29,12 +29,9 @@ export class GraphComponent implements OnChanges, OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log("changes")
-
     const startDate = this.range.controls.start.value?.toISOString();
     const endDate = this.range.controls.end.value?.toISOString();
-    console.log(this.countryName)
-    console.log(startDate + " and " + endDate)
+
     if (startDate != undefined && endDate != undefined) {
       this.service.getCountry(startDate, endDate, this.countryName).subscribe(
         countryData => {
